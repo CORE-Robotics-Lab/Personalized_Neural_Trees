@@ -220,7 +220,7 @@ class InfoGAIL:
         loads in train data
         :return:
         """
-        states, actions, failed_list, mturkcodes = pickle.load(open(os.path.join('../', 'testing_data_from_all_users_2.pkl'), 'rb'))
+        states, actions, failed_list, mturkcodes = pickle.load(open(os.path.join('../datasets/', 'testing_data_from_all_users_2.pkl'), 'rb'))
 
         indices_of_failed = []
         for i in failed_list:
@@ -235,7 +235,7 @@ class InfoGAIL:
         loads in test data
         :return:
         """
-        states, actions, failed_list, mturkcodes = pickle.load(open(os.path.join('../', 'training_data_from_all_users_2.pkl'), 'rb'))
+        states, actions, failed_list, mturkcodes = pickle.load(open(os.path.join('../datasets/', 'training_data_from_all_users_2.pkl'), 'rb'))
 
         indices_of_failed = []
         for i in failed_list:

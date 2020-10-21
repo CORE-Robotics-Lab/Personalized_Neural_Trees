@@ -1,5 +1,5 @@
 """
-Created by Anonymous on September 24, 2019
+Created by Rohan Paleja on September 24, 2019
 infoGAIL benchmark in the toy domain
 """
 import torch.optim as optim

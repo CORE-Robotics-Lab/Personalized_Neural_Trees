@@ -43,7 +43,8 @@ Each of the methods are found within this subfolder, corresponding to algorithm 
 
 For this environment, generating successful schedule trajectories takes some time. The folder ```create_scheduling_data``` has the files necessary to generate large datasets. Running create_data.py can create any number of schedules, averaging about 1000 a day.
 
-As these datasets are large, we have not added ours. However, as we use seeds, generating 250 schedules will produce the same dataset as ours. 
+As these datasets are large, we have added them to a box repo https://gatech.box.com/s/ogm20qcry0h12gf1r8b5r2vuud0vm6ye. However, as we use seeds, you are able to generate your own data. Using 250 schedules will produce the same dataset as ours. Once you have created a set of demonstrated schedules,
+please update the path to locate these.
 
 Each of the methods are found within this subfolder, corresponding to algorithm names within their respective papers. Note that each algorithm will run several times for k-fold cross` validation, sampling a different subset of 150 schedules to train upon.
 

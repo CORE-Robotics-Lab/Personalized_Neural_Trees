@@ -1,5 +1,5 @@
 """
-Created by Anonymous on Sep 7, 2019
+Created by Rohan Paleja on Sep 7, 2019
 This is an implementation of the paper Learning a Multi-Modal Policy via Imitating Demonstrations with Mixed Behaviors
 """
 

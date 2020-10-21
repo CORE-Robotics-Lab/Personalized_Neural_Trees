@@ -1,6 +1,6 @@
 """
 NN implementation w/ embedding evaluating train and test performance on a heterogeneous dataset
-created on May 17, 2019 by Anonymous
+created on May 17, 2019 by Rohan Paleja
 """
 from low_dim.generate_environment import create_simple_classification_dataset
 from low_dim.utils.accuracy_measures import compute_specificity, compute_sensitivity

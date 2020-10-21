@@ -1,5 +1,5 @@
 """
-Created by Anonymous on January 14, 2020
+Created by Rohan Paleja on January 14, 2020
 This is an implementation of the paper IMITATION LEARNING FROM VISUAL DATA WITH MULTIPLE INTENTIONS
 Tamar et. al.
 """
@@ -100,7 +100,7 @@ class EvalSNN:
         loads in train data
         :return:
         """
-        states, actions, failed_list, mturkcodes = pickle.load(open(os.path.join('../', 'testing_data_from_all_users_2.pkl'), 'rb'))
+        states, actions, failed_list, mturkcodes = pickle.load(open(os.path.join('../datasets/', 'testing_data_from_all_users_2.pkl'), 'rb'))
 
         indices_of_failed = []
         for i in failed_list:
@@ -115,7 +115,7 @@ class EvalSNN:
         loads in test data
         :return:
         """
-        states, actions, failed_list, mturkcodes = pickle.load(open(os.path.join('../', 'training_data_from_all_users_2.pkl'), 'rb'))
+        states, actions, failed_list, mturkcodes = pickle.load(open(os.path.join('../datasets/', 'training_data_from_all_users_2.pkl'), 'rb'))
 
         indices_of_failed = []
         for i in failed_list:

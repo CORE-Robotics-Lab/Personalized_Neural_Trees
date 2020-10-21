@@ -1,6 +1,6 @@
 """
 file to generate heterogeneous dataset
-created on May 18, 2019 by Anonymous
+created on May 18, 2019 by Rohan Paleja
 """
 import numpy as np
 

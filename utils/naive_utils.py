@@ -85,7 +85,7 @@ def find_which_schedule_this_belongs_to(schedule_array, sample_val):
 def load_in_naive_data(num_schedules, num_test_schedules):
     # load in data
 
-    load_directory = '/home/rohanpaleja/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/scheduling_dataset/' + str(
+    load_directory = '/home/rohanpaleja/PycharmProjects/bayesian_prolo/scheduling_env/scheduling_dataset/' + str(
         num_schedules) + 'EDF_9_25_2019_old_naive.pkl'
 
     data = pickle.load(open(load_directory, "rb"))
@@ -93,7 +93,7 @@ def load_in_naive_data(num_schedules, num_test_schedules):
     for i, each_element in enumerate(X_train_naive):
         X_train_naive[i] = each_element + list(range(20))
 
-    load_directory = '/home/rohanpaleja/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/scheduling_dataset/' + str(
+    load_directory = '/home/rohanpaleja/PycharmProjects/bayesian_prolo/scheduling_env/scheduling_dataset/' + str(
         num_test_schedules) + 'EDF_9_25_2019_old_test_naive.pkl'
 
     data = pickle.load(open(load_directory, "rb"))

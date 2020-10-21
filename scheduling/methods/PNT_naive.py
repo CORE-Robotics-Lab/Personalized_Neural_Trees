@@ -1,5 +1,5 @@
 """
-Created by Anonymous on September 13, 2019
+Created by Rohan Paleja on September 13, 2019
 Implementation of PDDT_naive since it was shown to perform so well in neurips
 """
 

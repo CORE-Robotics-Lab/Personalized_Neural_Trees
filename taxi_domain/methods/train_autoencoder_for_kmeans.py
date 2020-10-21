@@ -96,7 +96,7 @@ class AutoEncoderTrain:
         loads in train data
         :return:
         """
-        states, actions, failed_list, mturkcodes = pickle.load(open(os.path.join('../', 'training_data_from_all_users.pkl'), 'rb'))
+        states, actions, failed_list, mturkcodes = pickle.load(open(os.path.join('../datasets/', 'training_data_from_all_users.pkl'), 'rb'))
 
         indices_of_failed = []
         for i in failed_list:

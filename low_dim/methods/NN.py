@@ -1,6 +1,6 @@
 """
 Base NN implementation evaluating train and test performance on a homogeneous dataset
-created on May 17, 2019 by Anonymous
+created on May 17, 2019 by Rohan Paleja
 """
 import numpy as np
 import torch

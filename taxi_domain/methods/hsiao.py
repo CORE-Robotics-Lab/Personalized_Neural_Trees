@@ -1,5 +1,5 @@
 """
-Created by Anonymous on Sep 7, 2019
+Created by Rohan Paleja on Sep 7, 2019
 This is an implementation of the paper Learning a Multi-Modal Policy via Imitating Demonstrations with Mixed Behaviors
 """
 
@@ -185,7 +185,7 @@ class EvalcVAE:
         loads in train data
         :return:
         """
-        states, actions, failed_list, mturkcodes = pickle.load(open(os.path.join('../', 'testing_data_from_all_users_2.pkl'), 'rb'))
+        states, actions, failed_list, mturkcodes = pickle.load(open(os.path.join('../datasets/', 'testing_data_from_all_users_2.pkl'), 'rb'))
 
         indices_of_failed = []
         for i in failed_list:
@@ -200,7 +200,7 @@ class EvalcVAE:
         loads in test data
         :return:
         """
-        states, actions, failed_list, mturkcodes = pickle.load(open(os.path.join('../', 'training_data_from_all_users_2.pkl'), 'rb'))
+        states, actions, failed_list, mturkcodes = pickle.load(open(os.path.join('../datasets/', 'training_data_from_all_users_2.pkl'), 'rb'))
 
         indices_of_failed = []
         for i in failed_list:

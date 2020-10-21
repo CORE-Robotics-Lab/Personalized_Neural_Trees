@@ -1,5 +1,5 @@
 """
-Created by Anonymous on Sep 8, 2019
+Created by Rohan Paleja on Sep 8, 2019
 This is an implementation of the paper IMITATION LEARNING FROM VISUAL DATA WITH MULTIPLE INTENTIONS
 """
 

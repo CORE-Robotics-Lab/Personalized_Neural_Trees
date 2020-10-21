@@ -1,6 +1,6 @@
 """
 sklearn DT evaluating train and test performance on a heterogeneous dataset
-created on May 17, 2019 by Anonymous
+created on May 17, 2019 by Rohan Paleja
 """
 from sklearn.metrics import accuracy_score
 from sklearn import tree
