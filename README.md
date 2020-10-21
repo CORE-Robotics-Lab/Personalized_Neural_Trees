@@ -55,3 +55,8 @@ We have several datasets creating by randomly sampling demonstrators and initial
 
 Each of the methods are found within this subfolder, corresponding to algorithm names within their respective papers.
 
+### Implementation tips when using PNTs
+
+- Pretraining the policy before starting variational inference typically leads to
+better performance and stability during training.
+- Discretization is very sensitive and does not have a simple relationship with policy performance.

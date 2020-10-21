@@ -3,7 +3,7 @@ Created by Anonymous on Sep 9, 2019
 This is an implementation of the paper Learning a Multi-Modal Policy via Imitating Demonstrations with Mixed Behaviors
 """
 
-from base_testing_environment.toy_result_files_hetero.generate_environment import create_simple_classification_dataset
+from low_dim.generate_environment import create_simple_classification_dataset
 # from base_testing_environment.utils.accuracy_measures import compute_specificity, compute_sensitivity
 import torch
 import torch.nn as nn

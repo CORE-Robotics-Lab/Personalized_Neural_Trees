@@ -2,14 +2,14 @@
 NN implementation w/ embedding evaluating train and test performance on a heterogeneous dataset
 created on May 18,  2020 by Anonymous
 """
-from base_testing_environment.toy_result_files_hetero.generate_environment import create_simple_classification_dataset
-from base_testing_environment.utils.accuracy_measures import compute_specificity, compute_sensitivity
-from base_testing_environment.utils.helper_utils import save_performance_results
+from low_dim.generate_environment import create_simple_classification_dataset
+from low_dim.utils.accuracy_measures import compute_specificity, compute_sensitivity
+from low_dim.utils.helper_utils import save_performance_results
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
-from base_testing_environment.prolonet import ProLoNet
+from low_dim.prolonet import ProLoNet
 
 torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False

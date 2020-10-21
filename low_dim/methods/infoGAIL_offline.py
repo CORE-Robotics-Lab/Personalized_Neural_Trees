@@ -12,9 +12,9 @@ torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
 torch.manual_seed(49)  # ensures repeatability
 np.random.seed(49)
-from base_testing_environment.toy_result_files_hetero.generate_environment import create_simple_classification_dataset
+from low_dim.generate_environment import create_simple_classification_dataset
 from torch.distributions import OneHotCategorical
-from base_testing_environment.utils.helper_utils import save_performance_results
+from low_dim.utils.helper_utils import save_performance_results
 from scheduling_env.additions_for_HRI.infogail_scheduling import one_hot_embedding, my_entropy
 
 
