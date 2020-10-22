@@ -1,5 +1,5 @@
 import random
-from scheduling_env.create_scheduling_data.constants import *
+from scheduling.create_scheduling_data.constants import *
 
 class Task:
     def __init__(self, c=None, loc=None, name = ""):

@@ -275,7 +275,7 @@ class EvalSNN:
                 'top3_mean': np.mean(top3),
                 'top1_stderr': np.std(top1) / np.sqrt(len(top1)),
                 'top3_stderr': np.std(top3) / np.sqrt(len(top3))}
-        save_pickle(file=data, file_location='/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/results',
+        save_pickle(file=data, file_location='/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/results',
                     special_string=special_string)
 
 

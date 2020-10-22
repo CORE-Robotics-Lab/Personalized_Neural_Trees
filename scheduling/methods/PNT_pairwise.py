@@ -7,7 +7,7 @@ import sys
 import torch.nn as nn
 
 sys.path.insert(0, '/home/Anonymous/PycharmProjects/bayesian_prolo')
-from base_testing_environment.prolonet import ProLoNet
+from low_dim.prolonet import ProLoNet
 import numpy as np
 from torch.autograd import Variable
 from utils.global_utils import save_pickle
@@ -453,7 +453,7 @@ class ProLoTrain:
         sig = torch.nn.Sigmoid()
 
         if load_in_model:
-            checkpoint = torch.load('/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/models/9222019_PDDT_extended_epochs49999_3.tar')
+            checkpoint = torch.load('/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/models/9222019_PDDT_extended_epochs49999_3.tar')
             self.model.load_state_dict(checkpoint['nn_state_dict'])
         prediction_accuracy = [0, 0]
         percentage_accuracy_top1 = []
@@ -607,7 +607,7 @@ class ProLoTrain:
         torch.save({'nn_state_dict': self.model.state_dict(),
                     'training_embeddings': self.embedding_list,
                     'testing_embeddings': embedding_list},
-                   '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/models/302_model_for_DAgger.tar')
+                   '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/models/302_model_for_DAgger.tar')
 
 
         return np.mean(percentage_accuracy_top1)
@@ -620,7 +620,7 @@ class ProLoTrain:
         """
         torch.save({'nn_state_dict': self.model.state_dict(),
                     'training_embeddings': self.embedding_list},
-                   '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/models/9222019_' + name + '.tar')
+                   '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/models/9222019_' + name + '.tar')
 
     def save_performance_results(self, top1, top3, special_string):
         """
@@ -632,7 +632,7 @@ class ProLoTrain:
                 'top3_mean': np.mean(top3),
                 'top1_stderr': np.std(top1) / np.sqrt(len(top1)),
                 'top3_stderr': np.std(top3) / np.sqrt(len(top3))}
-        save_pickle(file=data, file_location='/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/results',
+        save_pickle(file=data, file_location='/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/results',
                     special_string=special_string)
 
 

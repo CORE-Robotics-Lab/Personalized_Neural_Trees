@@ -16,7 +16,7 @@ def save_performance_results(top1, special_string):
     print('top1_mean is : ', np.mean(top1))
     data = {'top1_mean': np.mean(top1),
             'top1_stderr': np.std(top1) / np.sqrt(len(top1))}
-    save_pickle(file=data, file_location='/home/Anonymous/PycharmProjects/bayesian_prolo/base_testing_environment/additions_for_HRI/results',
+    save_pickle(file=data, file_location='/home/Anonymous/PycharmProjects/bayesian_prolo/low_dim/results',
                 special_string=special_string)
 
 

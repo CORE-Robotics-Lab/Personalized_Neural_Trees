@@ -7,7 +7,7 @@ import sys
 import torch.nn as nn
 from datetime import date
 sys.path.insert(0, '/home/Anonymous/PycharmProjects/bayesian_prolo')
-from base_testing_environment.prolonet import ProLoNet
+from low_dim.prolonet import ProLoNet
 import numpy as np
 from torch.autograd import Variable
 from utils.pairwise_utils import load_in_pairwise_data, find_which_schedule_this_belongs_to

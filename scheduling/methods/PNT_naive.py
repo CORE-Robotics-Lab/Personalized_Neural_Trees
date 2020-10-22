@@ -9,7 +9,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 sys.path.insert(0, '/home/Anonymous/PycharmProjects/bayesian_prolo')
-from base_testing_environment.prolonet import ProLoNet
+from low_dim.prolonet import ProLoNet
 
 import numpy as np
 from torch.autograd import Variable
@@ -34,7 +34,7 @@ def save_performance_results(top1, top3, special_string):
             'top3_mean': np.mean(top3),
             'top1_stderr': np.std(top1) / np.sqrt(len(top1)),
             'top3_stderr': np.std(top3) / np.sqrt(len(top3))}
-    save_pickle(file=data, file_location='/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/results', special_string=special_string)
+    save_pickle(file=data, file_location='/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/results', special_string=special_string)
 
 
 # noinspection PyTypeChecker,PyArgumentList
@@ -191,7 +191,7 @@ class ProLoTrain:
         """
         torch.save({'nn_state_dict': self.model.state_dict(),
                     'training_embeddings': self.embedding_list},
-                   '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/models/PDDT_' + name + '.tar')
+                   '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/models/PDDT_' + name + '.tar')
 
 
 def main():

@@ -56,7 +56,7 @@ ddt = ProLoNet(input_dim=input_size,
                vectorized=True,
                selectors=None)
 
-checkpoint = torch.load('/home/Anonymous/PycharmProjects/bayesian_prolo/base_testing_environment/additions_for_HRI/models/models_pretrain.tar')
+checkpoint = torch.load('/home/Anonymous/PycharmProjects/bayesian_prolo/low_dim/models/models_pretrain.tar')
 ddt.load_state_dict(checkpoint['policy'])
 posterior = ProLoNet(input_dim=4,
                      output_dim=2,
@@ -160,7 +160,7 @@ for epoch in range(epochs):  # loop over the dataset multiple times
         plt.ylim(-1, 2)
         plt.show()
         torch.save({'policy': nn.ddt.state_dict(), 'posterior': nn.posterior.state_dict()},
-                   '/home/Anonymous/PycharmProjects/bayesian_prolo/base_testing_environment/additions_for_HRI/models/models_interpretable3' + str(
+                   '/home/Anonymous/PycharmProjects/bayesian_prolo/low_dim/models/models_interpretable3' + str(
                        epoch) + '.tar')
 print('Finished Training')
 

@@ -1,6 +1,6 @@
 import random
 import numpy as np
-from scheduling_env.create_scheduling_data.constants import *
+from scheduling.create_scheduling_data.constants import *
 
 
 class Agent:

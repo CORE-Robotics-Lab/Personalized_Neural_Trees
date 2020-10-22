@@ -15,7 +15,7 @@ np.random.seed(49)
 from low_dim.generate_environment import create_simple_classification_dataset
 from torch.distributions import OneHotCategorical
 from low_dim.utils.helper_utils import save_performance_results
-from scheduling_env.additions_for_HRI.infogail_scheduling import one_hot_embedding, my_entropy
+from scheduling.methods.infogail_scheduling import one_hot_embedding, my_entropy
 
 
 # TODO: jumpstart if does not work

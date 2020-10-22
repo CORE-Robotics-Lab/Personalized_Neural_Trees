@@ -4,7 +4,7 @@ Run through a set of schedules to generate a dataset in a naive and pairwise fas
 import sys
 sys.path.insert(0, '/home/Anonymous/PycharmProjects/bayesian_prolo')
 
-from scheduling_env.create_scheduling_data.world import *
+from scheduling.create_scheduling_data.world import *
 from utils.global_utils import save_pickle
 
 
@@ -13,7 +13,7 @@ def main():
     entry point of the file
     :return:
     """
-    file_location = '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/scheduling_dataset'
+    file_location = '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/scheduling_dataset'
 
     total_schedule = []
     total_schedule_pairwise = []
@@ -104,7 +104,7 @@ def main():
             # if n == 500:
             #     save_pickle(file_location=file_location, file=total_schedule,
             #                 special_string=str(500) + world.return_string_of_active_constraints('9_25_2019_old_test_naive') + '.pkl')
-            #     save_pickle(file_location='/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/scheduling_dataset', file=total_schedule_pairwise,
+            #     save_pickle(file_location='/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/scheduling_dataset', file=total_schedule_pairwise,
             #                 special_string=str(500) + world.return_string_of_active_constraints('9_25_2019_old_test_pairwise') + '.pkl')
             #
 

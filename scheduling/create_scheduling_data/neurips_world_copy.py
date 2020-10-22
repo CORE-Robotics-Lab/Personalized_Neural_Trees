@@ -2,13 +2,13 @@
 file containing helper functions alongside the inner workings of the scheduling environment
 """
 
-from scheduling_env.create_scheduling_data.agent import *
-from scheduling_env.create_scheduling_data.graph import *
+from scheduling.create_scheduling_data.agent import *
+from scheduling.create_scheduling_data.graph import *
 import numpy as np
-from scheduling_env.create_scheduling_data.task import Task
+from scheduling.create_scheduling_data.task import Task
 import re
 import os
-from scheduling_env.create_scheduling_data.constants import *
+from scheduling.create_scheduling_data.constants import *
 
 
 

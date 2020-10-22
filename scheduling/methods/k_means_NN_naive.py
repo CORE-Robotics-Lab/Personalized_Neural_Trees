@@ -14,7 +14,7 @@ from torch.autograd import Variable
 from utils.naive_utils import load_in_naive_data, find_which_schedule_this_belongs_to
 from utils.hri_utils import save_performance_results
 from sklearn.cluster import KMeans
-from scheduling_env.generate_results_of_hypothesis.pairwise.train_autoencoder import Autoencoder, AutoEncoderTrain
+from scheduling.methods.train_autoencoder import Autoencoder, AutoEncoderTrain
 # sys.path.insert(0, '../')
 import itertools
 
@@ -22,7 +22,7 @@ torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
 torch.manual_seed(0)
 np.random.seed(0)
-from scheduling_env.additions_for_HRI.NN_naive import NNSmall
+from scheduling.methods.NN_naive import NNSmall
 
 
 # noinspection PyTypeChecker,PyArgumentList
@@ -54,7 +54,7 @@ class NNTrain:
         self.optimizers = [opt1, opt2, opt3]
         self.when_to_save = 1000
 
-        schedule_matrix_load_directory = '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/results/'+str(self.num_schedules) + 'matrixes.pkl'
+        schedule_matrix_load_directory = '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/results/'+str(self.num_schedules) + 'matrixes.pkl'
         self.matrices = pickle.load(open(schedule_matrix_load_directory, "rb"))
 
         self.kmeans_model, self.label = self.cluster_matrices(self.matrices, self.num_schedules)
@@ -190,7 +190,7 @@ class NNTrain:
         # confusion_matrix = np.zeros((20,20))
 
         autoencoder_class = AutoEncoderTrain(self.num_schedules)
-        checkpoint = torch.load('/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/models/Autoencoder150.tar')
+        checkpoint = torch.load('/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/models/Autoencoder150.tar')
         autoencoder_class.model.load_state_dict(checkpoint['nn_state_dict'])
         states = self.create_iterables()
 
@@ -266,7 +266,7 @@ class NNTrain:
         torch.save({'nn1_state_dict': self.models[0].state_dict(),
                     'nn2_state_dict': self.models[1].state_dict(),
                     'nn3_state_dict': self.models[2].state_dict()},
-                   '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/models/k_means_NN_' + name + '.tar')
+                   '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/models/k_means_NN_' + name + '.tar')
 
 
 def main():

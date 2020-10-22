@@ -4,7 +4,7 @@ This is an implementation of the paper Learning a Multi-Modal Policy via Imitati
 """
 
 from low_dim.generate_environment import create_simple_classification_dataset
-# from base_testing_environment.utils.accuracy_measures import compute_specificity, compute_sensitivity
+# from low_dim.utils.accuracy_measures import compute_specificity, compute_sensitivity
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -327,7 +327,7 @@ class EvalcVAE:
         print('top1_mean for is : ', np.mean(top1))
         data = {'top1_mean': np.mean(top1),
                 'top1_stderr': np.std(top1) / np.sqrt(len(top1))}
-        save_pickle(file=data, file_location='/home/Anonymous/PycharmProjects/bayesian_prolo/base_testing_environment/additions_for_HRI/results',
+        save_pickle(file=data, file_location='/home/Anonymous/PycharmProjects/bayesian_prolo/low_dim/results',
                     special_string=special_string)
 
 

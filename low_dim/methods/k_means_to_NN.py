@@ -8,8 +8,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 import itertools
 from low_dim.generate_environment import create_simple_classification_dataset
-from base_testing_environment.utils.accuracy_measures import compute_specificity, compute_sensitivity
-from base_testing_environment.utils.helper_utils import save_performance_results
+from low_dim.utils.accuracy_measures import compute_specificity, compute_sensitivity
+from low_dim.utils.helper_utils import save_performance_results
 from sklearn.cluster import KMeans
 torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False

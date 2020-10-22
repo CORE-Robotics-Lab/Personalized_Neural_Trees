@@ -15,7 +15,7 @@ def save_performance_results(top1, top3, special_string):
             'top3_mean': np.mean(top3),
             'top1_stderr': np.std(top1) / np.sqrt(len(top1)),
             'top3_stderr': np.std(top3) / np.sqrt(len(top3))}
-    save_pickle(file=data, file_location='/home/rohanpaleja/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/results',
+    save_pickle(file=data, file_location='/home/rohanpaleja/PycharmProjects/bayesian_prolo/scheduling_env/results',
                 special_string=special_string)
 
 def save_performance_results_DT_version(top1, special_string):
@@ -26,7 +26,7 @@ def save_performance_results_DT_version(top1, special_string):
     print('top1_mean is : ', np.mean(top1))
     data = {'top1_mean': np.mean(top1),
             'top1_stderr': np.std(top1) / np.sqrt(len(top1))}
-    save_pickle(file=data, file_location='/home/rohanpaleja/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/results',
+    save_pickle(file=data, file_location='/home/rohanpaleja/PycharmProjects/bayesian_prolo/scheduling_env/results',
                 special_string=special_string)
 
 
@@ -37,7 +37,7 @@ def save_trained_nets(model, name):
     :return:
     """
     torch.save({'nn_state_dict': model.state_dict()},
-               '/home/rohanpaleja/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/models/' + name + '.tar')
+               '/home/rohanpaleja/PycharmProjects/bayesian_prolo/scheduling_env/models/' + name + '.tar')
 
 
 def save_trained_nets_and_embeddings(model, training_embeddings, name):
@@ -47,7 +47,7 @@ def save_trained_nets_and_embeddings(model, training_embeddings, name):
     """
     torch.save({'nn_state_dict': model.state_dict(),
                 'training_embeddings': training_embeddings},
-               '/home/rohanpaleja/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/models/' + name + '.tar')
+               '/home/rohanpaleja/PycharmProjects/bayesian_prolo/scheduling_env/models/' + name + '.tar')
 
 
 # noinspection PyArgumentList

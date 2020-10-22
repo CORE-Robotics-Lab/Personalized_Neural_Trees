@@ -5,11 +5,11 @@ import sys
 
 sys.path.insert(0, '/home/Anonymous/PycharmProjects/bayesian_prolo')
 
-from scheduling_env.additions_for_HRI.PDDT_DAGGER import *
+from scheduling.methods.PDDT_DAGGER import *
 from utils.global_utils import save_pickle
 import torch
 import time
-from base_testing_environment.prolonet import ProLoNet
+from low_dim.prolonet import ProLoNet
 
 
 def main():
@@ -75,7 +75,7 @@ def main():
     Format: list of lists where each index is a schedule and each index within that is a half-timestep (since there are 2 agents)
     """
     # if load_in:
-    #     checkpoint = torch.load('/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/models/Dagger86acc15sched20noise15.tar')
+    #     checkpoint = torch.load('/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/models/Dagger86acc15sched20noise15.tar')
     #     model.load_state_dict(checkpoint['nn_state_dict'])
 
     while n < num_scheds:

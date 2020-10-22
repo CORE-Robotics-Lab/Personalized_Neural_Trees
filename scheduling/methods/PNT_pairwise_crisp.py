@@ -8,9 +8,9 @@ import torch.nn as nn
 from AndrewSilva.tree_nets.utils.fuzzy_to_crispy import convert_to_crisp
 
 sys.path.insert(0, '/home/Anonymous/PycharmProjects/bayesian_prolo')
-from base_testing_environment.prolonet import ProLoNet
+from low_dim.prolonet import ProLoNet
 import numpy as np
-from scheduling_env.argument_parser import Logger
+from scheduling.argument_parser import Logger
 import pickle
 from torch.autograd import Variable
 from utils.global_utils import save_pickle
@@ -76,7 +76,7 @@ class ProLoTrain:
         self.when_to_save = 1000
         self.embedding_list = [torch.ones(8) * 1 / 3 for _ in range(self.num_schedules)]
 
-        checkpoint = torch.load('/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/models/all_PDDT_pairwise_info.tar')
+        checkpoint = torch.load('/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/models/all_PDDT_pairwise_info.tar')
         self.model.load_state_dict(checkpoint['nn_state_dict'])
         checkpoint = torch.load(
             '/home/Anonymous/PycharmProjects/bayesian_prolo/saved_models/HRI/test_embedding_' + str(i + 1) + '.tar')
@@ -125,7 +125,7 @@ class ProLoTrain:
         # define new optimizer that only optimizes gradient
         num_schedules = 100
         # load in new data
-        load_directory = '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/scheduling_dataset/' + str(
+        load_directory = '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/scheduling_dataset/' + str(
             num_schedules) + 'EDF_DIST_8_28_2019_test_pairwise.pkl'
         sig = torch.nn.Sigmoid()
         data = pickle.load(open(load_directory, "rb"))
@@ -283,7 +283,7 @@ class ProLoTrain:
         """
         torch.save({'nn_state_dict': self.model.state_dict(),
                     'parameters': self.arguments},
-                   '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/models/9062019_' + name + '.tar')
+                   '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/models/9062019_' + name + '.tar')
 
     def save_performance_results(self, top1, top3, special_string):
         """
@@ -295,7 +295,7 @@ class ProLoTrain:
                 'top3_mean': np.mean(top3),
                 'top1_stderr': np.std(top1) / np.sqrt(len(top1)),
                 'top3_stderr': np.std(top3) / np.sqrt(len(top3))}
-        save_pickle(file=data, file_location='/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/results',
+        save_pickle(file=data, file_location='/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/results',
                     special_string=special_string)
 
     def test_again_fuzzy(self, model, test_embeddings):
@@ -308,7 +308,7 @@ class ProLoTrain:
         # define new optimizer that only optimizes gradient
         num_schedules = 100
         # load in new data
-        load_directory = '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/scheduling_dataset/' + str(
+        load_directory = '/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/scheduling_dataset/' + str(
             num_schedules) + 'EDF_DIST_8_28_2019_test_pairwise.pkl'
         sig = torch.nn.Sigmoid()
         data = pickle.load(open(load_directory, "rb"))

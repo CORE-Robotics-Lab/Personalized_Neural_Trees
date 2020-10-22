@@ -5,7 +5,7 @@ created on January 8, 2020 by Rohan Paleja
 import torch
 import torch.nn as nn
 import numpy as np
-from base_testing_environment.prolonet import ProLoNet
+from low_dim.prolonet import ProLoNet
 from torch.autograd import Variable
 import os
 import pickle

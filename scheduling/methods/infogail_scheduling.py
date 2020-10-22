@@ -206,7 +206,7 @@ class InfoGAIL:
         ).to(device)
 
         if jumpstart:
-            checkpoint = torch.load('/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/models/NN_jumpstart_NN999999.tar')
+            checkpoint = torch.load('/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/models/NN_jumpstart_NN999999.tar')
             self.policy.load_state_dict(checkpoint['nn_state_dict'])
 
         self.policy_opt = optim.Adam(self.policy.parameters(), lr=.0001)
@@ -484,7 +484,7 @@ class InfoGAIL:
                 'top3_mean': np.mean(top3),
                 'top1_stderr': np.std(top1) / np.sqrt(len(top1)),
                 'top3_stderr': np.std(top3) / np.sqrt(len(top3))}
-        save_pickle(file=data, file_location='/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/additions_for_HRI/results',
+        save_pickle(file=data, file_location='/home/Anonymous/PycharmProjects/bayesian_prolo/scheduling_env/results',
                     special_string=special_string)
 
 
